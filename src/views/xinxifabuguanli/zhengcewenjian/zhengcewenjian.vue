@@ -1,13 +1,15 @@
 
 <template>
   <div class="app-container">
-        政策文件
+        <div>政策文件</div>
 
   </div>
 </template>
 
 <script>
 export default {
+    name:'zhengcewenjian',
+
 }
 </script>
 
