@@ -1,17 +1,13 @@
-
 <template>
   <div class="app-container">
-        政务公开
-
+       网站访问量分析
+       
   </div>
 </template>
 
 <script>
 export default {
+
 }
 </script>
 
-
-<style lang="less"  scoped>
-
-</style>

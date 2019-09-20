@@ -1,17 +1,12 @@
-
 <template>
   <div class="app-container">
-        政务公开
-
+      微信访问统计
   </div>
 </template>
 
 <script>
 export default {
+
 }
 </script>
 
-
-<style lang="less"  scoped>
-
-</style>

@@ -1,8 +1,6 @@
-
 <template>
   <div class="app-container">
-        政务公开
-
+       首页轮播设置
   </div>
 </template>
 
