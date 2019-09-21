@@ -185,26 +185,36 @@ export const constantRoutes = [{
         }
       },
 
+
+
+
+
+
       {
         //企业维空间管理
         path: 'weikongjian',
         name: 'weikongjian',
-        redirect: '/qiye/qiyexinxiguanli/weikongjian',
+        redirect: '/qiye/qiyexinxiguanli/weikongjian/qiyeweikongjian/qiyeweikongjian',
         meta: {
           title: '企业维空间管理',
           icon: 'table'
         },
+
+
+
+
         children:[
           {
             //企业微空间管理
-            path: 'qiyejiandang',
-            name: 'qiyejiandang',
-            component: () => import('@/views/qiyexinxiguanli/weikongjian/qiyeweikongjian/qiyeweikongjian'),
+            path: 'qiyeweikongjian',
+            name: 'qiyeweikongjian',
+            component: () => import('@/views/qiyexinxiguanli/weikongjian/gongxuguanli/qiyeweikongjian'),
             meta: {
-              title: '企业维空间管理',
+              title: '企业微空间管理',
               icon: 'table'
             }
           },
+
           {
             //供需管理
             path: 'gongxuguanli',
@@ -216,6 +226,11 @@ export const constantRoutes = [{
             }
           },
         ]
+
+
+
+
+
 
 
       },
