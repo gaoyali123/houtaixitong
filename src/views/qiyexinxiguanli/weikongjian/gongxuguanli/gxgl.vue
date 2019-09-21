@@ -1,7 +1,7 @@
 
 <template>
   <div class="app-container">
-       供需管理
+        gong
   </div>
 </template>
 

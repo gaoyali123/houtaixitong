@@ -199,38 +199,28 @@ export const constantRoutes = [{
           title: '企业维空间管理',
           icon: 'table'
         },
-
-
-
-
         children:[
           {
             //企业微空间管理
             path: 'qiyeweikongjian',
             name: 'qiyeweikongjian',
-            component: () => import('@/views/qiyexinxiguanli/weikongjian/gongxuguanli/qiyeweikongjian'),
+            component: () => import('@/views/qiyexinxiguanli/weikongjian/gongxuguanli/qiyeweikongjian.vue'),
             meta: {
               title: '企业微空间管理',
               icon: 'table'
             }
           },
-
           {
             //供需管理
             path: 'gongxuguanli',
             name: 'gongxuguanli',
-            component: () => import('@/views/qiyexinxiguanli/weikongjian/gongxuguanli/gongxuguanli'),
+            component: () => import('@/views/qiyexinxiguanli/weikongjian/gongxuguanli/gxgl.vue'),
             meta: {
               title: '供需管理',
               icon: 'table'
             }
           },
         ]
-
-
-
-
-
 
 
       },
