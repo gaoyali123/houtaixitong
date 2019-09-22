@@ -41,51 +41,24 @@ export const constantRoutes = [{
     component: () => import('@/views/404'),
     hidden: true
   },
-
+  {
+    path: '/xinxiguanli/zhengcewenjian/bianji',
+    component: () => import('@/views/bianjiwenjian'),
+    hidden: true
+  },
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/',
     children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
+      path: '',
       component: () => import('@/views/dashboard/index'),
       meta: {
-        title: '工作台',
-        icon: 'dashboard'
+        title: '首页',
       }
     }]
   },
 
-  {
-    path: '/example',
-    component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: {
-      title: '列子',
-      icon: 'example'
-    },
-    children: [{
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: {
-          title: 'Table',
-          icon: 'table'
-        }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: {
-          title: 'Tree',
-          icon: 'tree'
-        }
-      }
-    ]
-  },
   // 信息发布管理
   {
     path: '/news',
@@ -157,7 +130,7 @@ export const constantRoutes = [{
   {
     path: '/qiye ',
     component: Layout,
-    redirect: '/qiye/qiyejiandang',
+    redirect: '/qiye/qiyexinxiguanli',
     name: 'qiye',
     meta: {
       title: '企业信息管理',
@@ -184,45 +157,30 @@ export const constantRoutes = [{
           icon: 'table'
         }
       },
-
-
-
-
-
-
       {
         //企业维空间管理
         path: 'weikongjian',
         name: 'weikongjian',
-        redirect: '/qiye/qiyexinxiguanli/weikongjian/qiyeweikongjian/qiyeweikongjian',
-        meta: {
+        component: () => import('@/views/qiyexinxiguanli/weikongjian/weikongjian'),
+        redirect:'/qiyejiandang/qiyeweikongjian/',
+        meta:{
           title: '企业维空间管理',
           icon: 'table'
         },
         children:[
           {
-            //企业微空间管理
-            path: 'qiyeweikongjian',
+            path:'weikongjianguanli',
+            component: () => import('@/views/qiyexinxiguanli/weikongjian/qiyeweikongjian/qiyeweikongjian'),
             name: 'qiyeweikongjian',
-            component: () => import('@/views/qiyexinxiguanli/weikongjian/gongxuguanli/qiyeweikongjian.vue'),
-            meta: {
-              title: '企业微空间管理',
-              icon: 'table'
-            }
+            meta: { title: '企业微空间管理' }
           },
           {
-            //供需管理
-            path: 'gongxuguanli',
+            path:'gongxuguanli',
+            component: () => import('@/views/qiyexinxiguanli/weikongjian/gongxuguanli/gongxuguanli'),
             name: 'gongxuguanli',
-            component: () => import('@/views/qiyexinxiguanli/weikongjian/gongxuguanli/gxgl.vue'),
-            meta: {
-              title: '供需管理',
-              icon: 'table'
-            }
-          },
+            meta: { title: '供需管理' }
+          }
         ]
-
-
       },
 
       {
@@ -298,7 +256,7 @@ export const constantRoutes = [{
   {
     path: '/infoguanli ',
     component: Layout,
-    redirect: '/infoguanli/qiyejiandang',
+    redirect: '/infoguanli',
     name: 'qiye',
     meta: {
       title: '信息管理',
@@ -323,9 +281,19 @@ export const constantRoutes = [{
         meta: {
           title: '政策文件',
           icon: 'table'
-        }
+        },
       },
-
+      {
+        //政策文件
+        path: 'zhengcewenjiandetail',
+        name: 'zhengcewenjian',
+        component: () => import('@/views/xinxiguanli/zhengcewenjiandetail/zhengcewenjiandetail'),
+        meta: {
+          title: '政策文件详情',
+          icon: 'table'
+        },
+        hidden:true
+      },
       {
         //通知公告
         path: 'tongzhigonggao',
@@ -624,7 +592,7 @@ export const constantRoutes = [{
     ]
   },
 
-  // 统计分析 
+  // 统计分析
   {
     path: '/tongjifenxi ',
     component: Layout,
@@ -903,7 +871,7 @@ export const constantRoutes = [{
   // },
 
   // 404 page must be placed at the end !!!
-  // { path: '*', redirect: '/404', hidden: true }  
+  // { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () => new Router({
