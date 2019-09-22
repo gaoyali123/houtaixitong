@@ -42,11 +42,6 @@ export const constantRoutes = [{
     hidden: true
   },
   {
-    path: '/xinxiguanli/zhengcewenjian/bianji',
-    component: () => import('@/views/bianjiwenjian'),
-    hidden: true
-  },
-  {
     path: '/',
     component: Layout,
     redirect: '/',
@@ -167,20 +162,6 @@ export const constantRoutes = [{
           title: '企业维空间管理',
           icon: 'table'
         },
-        children:[
-          {
-            path:'weikongjianguanli',
-            component: () => import('@/views/qiyexinxiguanli/weikongjian/qiyeweikongjian/qiyeweikongjian'),
-            name: 'qiyeweikongjian',
-            meta: { title: '企业微空间管理' }
-          },
-          {
-            path:'gongxuguanli',
-            component: () => import('@/views/qiyexinxiguanli/weikongjian/gongxuguanli/gongxuguanli'),
-            name: 'gongxuguanli',
-            meta: { title: '供需管理' }
-          }
-        ]
       },
 
       {
