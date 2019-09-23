@@ -48,7 +48,7 @@
       <div class="input_right">
         <el-radio v-model="radio" label="1">是</el-radio>
         <el-radio v-model="radio" label="2">否</el-radio>
-        </el-input></div>
+        </div>
 
     </div>
     <div class="content">
