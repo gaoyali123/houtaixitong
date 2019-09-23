@@ -1,7 +1,19 @@
 <template>
   <div class="app-container">
-    <el-button type="info" round @click="bianji()">添加</el-button>
-    <el-button type="primary" icon="el-icon-edit" circle @click="bianji"></el-button>
+    <div class="serch">
+      <div class="serch_input">
+        <el-input
+          placeholder="请输入内容"
+        >
+          <i slot="prefix" class="el-input__icon el-icon-search"></i>
+        </el-input>
+      </div>
+      <div class="serch_button">
+        <el-button type="primary" icon="el-icon-search">搜索</el-button>
+        <el-button type="info" round @click="bianji">添加</el-button>
+        <el-button type="primary" icon="el-icon-edit" circle @click="bianji"></el-button>
+      </div>
+    </div>
 <!--    展示政策文件-->
     <el-table
       :data="tableData"
@@ -98,4 +110,18 @@ name:'zhengcewenjian',
   }
 }
 </script>
+<style scoped lang="less">
+  .serch_button{
+    float: left;
+    margin-left: 100px;
+    >*{
+      margin-right: 30px;
+    }
+  }
+  .serch_input{
+    float: left;
+    margin-left: 100px;
+    width: 20%;
+  }
+</style>
 
