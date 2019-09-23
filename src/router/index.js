@@ -199,8 +199,7 @@ export const constantRoutes = [{
           title: '企业维空间管理',
           icon: 'table'
         },
-        children:[
-          {
+        children: [{
             //企业微空间管理
             path: 'qiyeweikongjian',
             name: 'qiyeweikongjian',
@@ -375,19 +374,58 @@ export const constantRoutes = [{
 
 
   // app设置
+  // {
+  //   path: '/lunbotu',
+  //   component: Layout,
+  //   children: [{
+  //     path: 'lunbotu',
+  //     name: 'lunbotu',
+  //     component: () => import('@/views/lunbotu/lunbotu'),
+  //     meta: {
+  //       title: '首页轮播设置',
+  //       icon: 'form'
+  //     }
+  //   }]
+  // },
+
+
+
+  // 轮播图设置
   {
-    path: '/lunbotu',
+    path: '/lunbotu ',
     component: Layout,
+    redirect: '/lunbotu/pc',
+    name: 'lunbotu',
+    meta: {
+      title: '轮播图',
+      icon: 'form'
+    },
     children: [{
-      path: 'lunbotu',
-      name: 'lunbotu',
-      component: () => import('@/views/lunbotu/lunbotu'),
-      meta: {
-        title: '首页轮播设置',
-        icon: 'form'
+        //pc设置
+        path: 'pc',
+        name: 'pc',
+        component: () => import('@/views/lunbotu/pc/pc'),
+        meta: {
+          title: 'pc端设置',
+          icon: 'table'
+        }
+      },
+
+      {
+        //App设置
+        path: 'app',
+        name: 'app',
+        component: () => import('@/views/lunbotu/app/app'),
+        meta: {
+          title: 'App设置',
+          icon: 'table'
+        }
       }
-    }]
+    ]
   },
+
+
+
   // 链接管理
   {
     path: '/lianjieguanli',
@@ -403,6 +441,22 @@ export const constantRoutes = [{
     }]
   },
 
+
+  {
+    path: '/bianji',
+    component: Layout,
+    hidden:true,
+    children: [{
+      path: 'bianji',
+      name: 'bianji',
+      component: () => import('@/views/weiqifuwu/bianji/bianji'),
+      meta: {
+        title: '编辑',
+        icon: 'form'
+      }
+    }]
+  },
+
   //为企服务
   {
     path: '/weiqifuwu',
@@ -410,7 +464,7 @@ export const constantRoutes = [{
     redirect: '/weiqifuwu/qiyexinyongxinxi',
     name: 'qiyexinyongxinxi',
     meta: {
-      title: '信息发布管理',
+      title: '为企服务',
       icon: 'form'
     },
     children: [{
