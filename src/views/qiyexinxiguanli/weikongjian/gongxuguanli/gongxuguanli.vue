@@ -1,12 +1,10 @@
 <template>
-    <div>
-      <router-view/>
-    </div>
+    <div>供需管理</div>
 </template>
 
 <script>
   export default {
-    name: 'weikongjian'
+    name: 'gongxuguanli'
   }
 </script>
 

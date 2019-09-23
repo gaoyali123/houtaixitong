@@ -1,11 +1,22 @@
-
 <template>
   <div class="app-container">
    <el-tabs type="border-card">
     <el-tab-pane label="已发布">
+      <div style="padding: 20px">
+        <div class="serch_left">
+          <el-input
+            placeholder="请输入内容"
+            prefix-icon="el-icon-search"
+            v-model="input21">
+          </el-input>
+        </div>
+        <div class="serch_right">
+          <el-button type="primary">搜索</el-button>
+        </div>
+      </div>
 <!--      表格-->
       <el-table
-        :data="policy.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
+        :data="policy"
         style="width: 100%">
         <el-table-column
           prop="id"
@@ -20,32 +31,27 @@
         <el-table-column
           prop="fabudanwei"
           label="发布单位"
-          width="100">
+          width="150">
         </el-table-column>
         <el-table-column
           prop="isreprint"
           label="是否转载"
-          width="100">
+          width="150">
         </el-table-column>
         <el-table-column
           prop="state"
           label="审核状态"
-          width="100">
+          width="150">
         </el-table-column>
         <el-table-column
           prop="publishtime"
           label="发布时间"
-          width="100">
+          width="150">
         </el-table-column>
         <el-table-column
           prop="publishname"
           label="发布人"
-          width="100">
-        </el-table-column>
-        <el-table-column
-          prop="addtime"
-          label="添加时间"
-          width="100">
+          width="150">
         </el-table-column>
         <el-table-column
           prop="classnumber"
@@ -53,27 +59,34 @@
           width="150">
         </el-table-column>
         <el-table-column
-          prop="addman"
-          label="添加人"
-          width="150">
-        </el-table-column>
-        <el-table-column
           prop="pageview"
           label="浏览量"
           width="150">
         </el-table-column>
-        <el-table-column label="正文" width="150">
+        <el-table-column label="操作" width="200">
           <template slot-scope="scope">
             <el-button
               size="mini"
-              @click="handleEdit(scope.row.id)">编辑</el-button>
+              @click="handleEdit(scope.row.id)">撤回</el-button>
           </template>
         </el-table-column>
       </el-table>
     </el-tab-pane>
     <el-tab-pane label="待发布">
+      <div style="padding: 20px">
+        <div class="serch_left">
+          <el-input
+            placeholder="请输入内容"
+            prefix-icon="el-icon-search"
+            v-model="input21">
+          </el-input>
+        </div>
+        <div class="serch_right">
+          <el-button type="primary">搜索</el-button>
+        </div>
+      </div>
       <el-table
-        :data="policys.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
+        :data="policys"
         style="width: 100%">
         <el-table-column
           prop="id"
@@ -88,32 +101,27 @@
         <el-table-column
           prop="fabudanwei"
           label="发布单位"
-          width="100">
+          width="150">
         </el-table-column>
         <el-table-column
           prop="isreprint"
           label="是否转载"
-          width="100">
+          width="150">
         </el-table-column>
         <el-table-column
           prop="state"
           label="审核状态"
-          width="100">
+          width="150">
         </el-table-column>
         <el-table-column
           prop="publishtime"
           label="发布时间"
-          width="100">
+          width="150">
         </el-table-column>
         <el-table-column
           prop="publishname"
           label="发布人"
-          width="100">
-        </el-table-column>
-        <el-table-column
-          prop="addtime"
-          label="添加时间"
-          width="100">
+          width="150">
         </el-table-column>
         <el-table-column
           prop="classnumber"
@@ -121,23 +129,11 @@
           width="150">
         </el-table-column>
         <el-table-column
-          prop="addman"
-          label="添加人"
-          width="150">
-        </el-table-column>
-        <el-table-column
           prop="pageview"
           label="浏览量"
           width="150">
         </el-table-column>
-        <el-table-column label="正文" width="100">
-          <template slot-scope="scope">
-            <el-button
-              size="mini"
-              @click="handleEdit(scope.row.id)">编辑</el-button>
-          </template>
-        </el-table-column>
-        <el-table-column label="发布" width="100">
+        <el-table-column label="操作" width="200">
           <template slot-scope="scope">
             <el-button
               size="mini"
@@ -156,7 +152,8 @@ export default {
     data(){
         return {
             policy:[],
-            policys:[]
+            policys:[],
+          input:''
         }
     }
 }
@@ -164,5 +161,12 @@ export default {
 
 
 <style lang="less"  scoped>
-
+.serch_left{
+  float: left;
+  width: 20%;
+}
+  .serch_right{
+    float: left;
+    margin-left: 50px;
+  }
 </style>

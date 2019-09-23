@@ -1,12 +1,10 @@
 <template>
-    <div>
-      <router-view/>
-    </div>
+    <div>企业微空间</div>
 </template>
 
 <script>
   export default {
-    name: 'weikongjian'
+    name: 'qiyeweikongjian'
   }
 </script>
 
