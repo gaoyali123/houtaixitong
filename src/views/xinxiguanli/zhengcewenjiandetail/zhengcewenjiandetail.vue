@@ -29,7 +29,7 @@
     <div class="warp">
       <span class="int">正文:</span>
       <div class="con">
-
+        <Editor ref="froalaEditor" @on-change="changeContent" v-model="formData.content"></Editor>
       </div>
     </div>
     <div class="content">
@@ -81,11 +81,15 @@
         </el-cascader>
       </div>
     </div>
-
+    <div>
+     
+    </div>
   </div>
 </template>
 
 <script>
+import{quillEditor} from 'vue-quill-editor'
+import Editor from '../../../components/editor/editor'
   export default {
     name: 'zhengcewenjiandetail',
     data() {
@@ -287,8 +291,48 @@
           }]
         }
         ],
+        content:'',
+        editorOption:{},
+        selectedOptions:'',
+        formData:{}
       }
     },
+    methods:{
+      onEditorBlur(editor){//失去焦点
+
+      },
+      onEditorFocus(editor){
+        //获得焦点
+      },
+      onEditorChange({editor,html,text}){
+        console.log(this.content)
+      },
+      handleChange(){},
+      init () {
+
+        this.$nextTick(()=>{
+
+        console.log(this.formData.content)
+
+        this.$refs.froalaEditor.setHtml(this.formData.content)
+
+        })
+
+
+    },
+
+    changeContent (html) {
+
+      this.formData.content = html
+
+      // console.log(html)
+
+    },
+    },
+    components:{
+      quillEditor,
+      Editor
+    }
   }
 </script>
 
@@ -312,13 +356,12 @@
   }
   .warp{
     .int{
-      display: block;
       height: 40px;
       line-height: 40px;
       float: left;
     }
     .con{
-      float: left;
+      height: 1000px;
     }
   }
 </style>

@@ -15,6 +15,19 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+
+/**
+ * 配置富文本编辑器
+ */
+import jquery from 'jquery';
+import vueFroala from 'vue-froala-wysiwyg'
+require('froala-editor/js/froala_editor.pkgd.min');
+require('froala-editor/css/froala_editor.pkgd.min.css');
+require('font-awesome/css/font-awesome.css');
+require('froala-editor/js/languages/zh_cn');
+require('froala-editor/css/froala_style.min.css');
+window.$=jquery;
+Vue.use(vueFroala);
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
