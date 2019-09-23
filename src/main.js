@@ -19,15 +19,19 @@ import '@/permission' // permission control
 /**
  * 配置富文本编辑器
  */
-import jquery from 'jquery';
-import vueFroala from 'vue-froala-wysiwyg'
-require('froala-editor/js/froala_editor.pkgd.min');
-require('froala-editor/css/froala_editor.pkgd.min.css');
-require('font-awesome/css/font-awesome.css');
-require('froala-editor/js/languages/zh_cn');
-require('froala-editor/css/froala_style.min.css');
-window.$=jquery;
-Vue.use(vueFroala);
+　//引入 Froala Editor js file.
+　　require('froala-editor/js/froala_editor.pkgd.min')
+　　//引入中文语言包
+　　require('froala-editor/js/languages/zh_cn')
+　　//引入 Froala Editor css files.
+　　require('froala-editor/css/froala_editor.pkgd.min.css')
+　　require('font-awesome/css/font-awesome.css')
+　　require('froala-editor/css/froala_style.min.css')
+
+import jQuery from 'jquery'
+　　import VueFroala from 'vue-froala-wysiwyg'
+　　window.$ = jQuery
+　　Vue.use(VueFroala)
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api

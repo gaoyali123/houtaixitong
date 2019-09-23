@@ -88,7 +88,6 @@
 </template>
 
 <script>
-import{quillEditor} from 'vue-quill-editor'
 import Editor from '../../../components/editor/editor'
   export default {
     name: 'zhengcewenjiandetail',
@@ -330,7 +329,6 @@ import Editor from '../../../components/editor/editor'
     },
     },
     components:{
-      quillEditor,
       Editor
     }
   }
